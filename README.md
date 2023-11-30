@@ -1,11 +1,8 @@
-<p align="center">
-    <img src="https://storage.googleapis.com/golden-wind/unform/unform.svg" height="150" width="175" alt="Unform" />
-</p>
-
+<!-- Banner -->
 <h1 align="center">Spike Store</h1>
 <p align="center">🛒🌵 Sistema para cadastro e gerenciamento de vendas</p>
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+<!-- Badges -->
 
 <h4 align="center"> 🚧  Em construção...  🚧</h4>
 
@@ -25,21 +22,20 @@
 <div id="roadmap">
     <h2>Roadmap</h2>
     <h3>Funcionalidades</h3>
-
-    - [ ] Cadastro de vendedores
-    - [ ] Listagem de vendedores
-    - [ ] Atualização de vendedores
-    - [ ] Exclusão de vendedores
-    - [ ] Cadastro de vendas
-    - [ ] Listagem de vendas
-
+    <ul>
+        <li>Cadastro de vendedores</li>
+        <li>Listagem de vendedores</li>
+        <li>Atualização de vendedores</li>
+        <li>Exclusão de vendedores</li>
+        <li>Cadastro de vendas</li>
+        <li>CListagem de vendas</li>
+    </ul>
     <h3>Banco de Dados (DER)</h3> 
     <p align="center">
-        <img src="public/assets/der_spike_store.jpg" height="150" width="175" alt="Diagrama de Entidade e Relacionamento" />
+        <img src="public/assets/der_spike_store.jpg" alt="Diagrama de Entidade e Relacionamento" />
     </p>
     <h3>Rotas</h3>
     <h3>Teste unitários</h3>
-
 </div>
 <div id="prototipacao">
     <h2>Prototipação</h2>
@@ -48,22 +44,18 @@
 </div>
 <div id="tecnologias">
     <h2>Tecnologias</h2>
-    As seguintes ferramentas foram usadas na construção do projeto:
-
+    <p>As seguintes ferramentas foram usadas na construção do projeto:</p>
     - [Laravel](https://expo.io/)
     - [PHP 8.2](https://nodejs.org/en/)
     - [Composer](https://pt-br.reactjs.org/)
     - [Javascript](https://nodejs.org/en/)
     - [Mysql](https://reactnative.dev/)
-
 </div>
 <div id="executando_projeto">
     <h2>Executando o projeto</h2>
     <h3>Pré-requisitos</h3>
-
-    Antes de mais nada, você precisará ter instalado em sua máquina as seguintes ferramentas:
+    <p>Antes de mais nada, você precisará ter instalado em sua máquina as seguintes ferramentas:</p>
     [PHP 8.2](https://www.php.net/), [Composer](https://getcomposer.org), [Mysql](https://www.mysql.com/).
-
     <h3>Preparando ambiente</h3>
     <p>Migrations e Arquivos SQL</p>
     <h3>Rodando a aplicação</h3>
