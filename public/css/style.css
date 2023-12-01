@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nunito:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+    padding: 1% 2%;
+}
+
+.btn-large {
+    padding: 1.5% 4%;
+    font-size: 16px;
+}
+
+.btn-green {
+    background-color: #06DC5A;
+}
+
+.btn-white {
+    background-color: #DDE2DE;
+}
+
+.btn-red {
+    background-color: #C51E1F;
+}
+
+.btn-yellow {
+    background-color: #E4DE1F;
+}
+
+.btn-icon {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Alata', sans-serif;
+}

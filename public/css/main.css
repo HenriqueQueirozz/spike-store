@@ -1,0 +1,48 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92%;
+    background-color: #1B1C1E;
+    color: #DDE2DE;
+}
+
+#container-header{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 8% 0;
+    justify-content: space-between;
+}
+
+#table-seller{
+    width: 80%;
+}
+
+#table-seller th{
+    text-align: left;
+    border-bottom: solid black 2px;
+    font-size: 20px;
+}
+
+#table-seller td{
+    font-size: 16px;
+}
+
+#table-seller th, #table-seller td{
+    padding: 1%;
+}
+
+#table-seller tr td:nth-child(n + 3) {
+    text-align: center; 
+}
+
+#form-seller{
+    display: flex;
+    flex-direction: column;
+}
+
+aside {
+    width: 8%;
+    background-color: #06DC5A;
+}
