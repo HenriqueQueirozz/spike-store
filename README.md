@@ -32,11 +32,7 @@
     </ul>
     <h3>Banco de Dados (DER)</h3> 
     <p align="center">
-<<<<<<< HEAD
         <img src="public/img/der_spike_store.jpg" height="150" width="175" alt="Diagrama de Entidade e Relacionamento" />
-=======
-        <img src="public/assets/der_spike_store.jpg" alt="Diagrama de Entidade e Relacionamento" />
->>>>>>> 5255dc27168e284cffe039e8612026fc810217fb
     </p>
     <h3>Rotas</h3>
     <h3>Teste unitários</h3>
