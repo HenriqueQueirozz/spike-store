@@ -4,7 +4,10 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\Seller;
+use App\Mail\salesReports;
+use Illuminate\Support\Facades\Mail;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -12,7 +15,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $sellers_sales = Seller::with('sales')->get();
+            foreach($sellers_sales as $seller){
+                $seller = Seller::find($seller->seller_id);
+                Mail::to($seller->email)->send(new salesReports($seller, $seller->sales));
+            }
+       })->daily();
     }
 
     /**

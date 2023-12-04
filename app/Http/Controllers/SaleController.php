@@ -3,43 +3,65 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Throwable;
 
+use App\Models\Seller;
 use App\Models\Sale;
 
 class SaleController extends Controller
 {
-    public function index(){
-        $sales = Sale::all();
+    private $saleModel;
+
+    public function __construct(){
+        $this->saleModel = new Sale;
+    }
+
+    public function listar($seller_id){
+        //$sellers_sales = Seller::with('sales')->get();
+        $sales = $this->saleModel->listar_vendas($seller_id);
         return $sales;
     }
 
-    public function store($data): void{
-        $sale = new Sale;
-
-        $sale->seller_fk = $data['seller_id'];
-        $sale->value = $data['value'];
-        $sale->date = $data['date'];
-
-        $sale->save();
-    }
-
-    public function show($id){
+    public function consultar($id){
         $sale = Sale::FindOrFail($id);
         return $sale;
     }
 
-    public function update($data): void{
-        $sale = Sale::FindOrFail($data['id']);
+    public function inserir($sale_data){
+        try {
+            $seller = Seller::find($sale_data['seller_id']);
 
-        //$sale->seller_fk = $data['seller_id'];
-        $sale->value = $data['value'];
-        $sale->date = $data['date'];
-
-        $sale->save();
+            $data = [
+                'value' => $sale_data['value'],
+                'date' => $sale_data['date']
+            ];
+        
+            $seller->sales()->create($data);
+            return true;
+        } catch (Throwable $e) {
+            report($e);
+            return false;
+        }
     }
 
-    public function destroy($id): void{
-        $sale = Sale::FindOrFail($id);
+    public function atualizar($sale_data){
+        try {
+            $sale = Sale::FindOrFail($sale_data['id']);
+
+            //$sale->seller_fk = $sale_data['seller_id'];
+            $sale->value = $sale_data['value'];
+            $sale->date = $sale_data['date'];
+
+            $sale->save();
+            return $sale;
+        } catch (Throwable $e) {
+            report($e);
+            return false;
+        }
+    }
+
+    public function deletar($sale_id){
+        $sale = Sale::FindOrFail($sale_id);
         $sale->delete();
     }
 }

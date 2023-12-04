@@ -17,14 +17,25 @@ main {
     height: 100%;
 }
 
+a {
+    color: white;
+}
+
 .btn {
     border: none;
     background-color: transparent;
-    padding: 1% 2%;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.btn-rounded {
+    border-radius: 10px;
 }
 
 .btn-large {
-    padding: 1.5% 4%;
+    padding: 15px 40px;
     font-size: 16px;
 }
 
@@ -32,22 +43,49 @@ main {
     background-color: #06DC5A;
 }
 
+.btn-green:hover {
+    background-color: #059C41;
+}
+
 .btn-white {
     background-color: #DDE2DE;
+}
+
+.btn-white:hover {
+    background-color: #CFD4D0;
+}
+
+.btn-darkGreen {
+    background-color: #06CC55;
+}
+
+.btn-darkGreen:hover {
+    background-color: #06BD4F;
 }
 
 .btn-red {
     background-color: #C51E1F;
 }
 
+.btn-red:hover {
+    background-color: #BF1E1F;
+}
+
 .btn-yellow {
     background-color: #E4DE1F;
 }
 
+.btn-yellow:hover {
+    background-color: #D4CE1E;
+}
+
 .btn-icon {
-    align-items: center;
-    display: flex;
     gap: 10px;
+}
+
+.btn-nav {
+    font-size: 48px;
+    height: 100px;
 }
 
 .bold {
@@ -56,4 +94,26 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Alata', sans-serif;
+}
+
+.msg {
+    color: #1B1C1E;
+    position: absolute;
+    top: 6%;
+    background-color: #add8e6cc;
+    padding: 10px 20px;
+    width: 30%;
+    border-left: 5px solid #4169E1;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
 }

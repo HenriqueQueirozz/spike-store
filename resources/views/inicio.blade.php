@@ -16,12 +16,33 @@
                 right: 0;
                 margin: 0 auto; 
             }
+
+            #banner_apresentacao{
+                width: 80%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: auto;
+            }
+
+            #banner_apresentacao h1{
+                color: #DDE2DE;
+                font-size: 100px;
+            }
+
+            #banner_apresentacao img{
+                width: 40%;
+            }
             
         </style>
     </head>
     <body>
         <main>
-           <button id="btn-system-acess" class="btn btn-large btn-green bold" type="button" onclick="redirectSellers();">Acessar o sistema</button>
+            <div id="banner_apresentacao">
+                <h1>Spike Store</h1>
+                <img src="/img/spike.png" alt="Cacto sorridente">
+            </div>
+           <button id="btn-system-acess" class="btn btn-large btn-rounded btn-green bold" type="button" onclick="redirectSellers();">Acessar o sistema</button>
         </main>
         <script>
             function redirectSellers(){

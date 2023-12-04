@@ -6,10 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiSaleController;
 use App\Http\Controllers\ApiSellerController;
 
-Route::resource('sale', ApiSaleController::class)->except([
+Route::resource('/seller', ApiSellerController::class)->except([
     'edit', 'create'
 ]);
 
-Route::resource('seller', ApiSellerController::class)->except([
+Route::resource('/sale', ApiSaleController::class)->except([
     'edit', 'create'
 ]);

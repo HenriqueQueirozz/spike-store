@@ -9,7 +9,16 @@
     <body>
         <main>
             <aside>
-                <nav></nav>
+                <nav id="navigation-bar">
+                    <ul>
+                        <li>
+                            <a href="/vendedores"><button class="btn btn-nav btn-darkGreen bold"><ion-icon name="people-outline"></ion-icon></button></a>
+                        </li>
+                        <li>
+                            <a href="/vendas"><button class="btn btn-nav btn-darkGreen bold"><ion-icon name="cart-outline"></ion-icon></button></a>
+                        </li>
+                    </ul>
+                </nav>
             </aside>
             @yield('content')
         </main>

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id('sale_id');
-            $table->bigIncrements('seller_fk');
+            $table->foreignId('seller_fk')->constrained('sellers', 'seller_id', 'seller_fk')->onUpdate('cascade')->onDelete('cascade');
             $table->decimal('value', $precision = 8, $scale = 2);
             $table->date('date');
             $table->timestamps();

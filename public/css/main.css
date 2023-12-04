@@ -11,33 +11,33 @@
     display: flex;
     align-items: center;
     width: 80%;
-    margin: 8% 0;
+    margin: 12% 0 4% 0;
     justify-content: space-between;
 }
 
-#table-seller{
+#table-seller, #table-sales{
     width: 80%;
 }
 
-#table-seller th{
-    text-align: left;
-    border-bottom: solid black 2px;
+#table-seller th, #table-sales th{
+    border-bottom: solid #06DC5A 2px;
     font-size: 20px;
 }
 
-#table-seller td{
+#table-seller td, #table-sales td{
     font-size: 16px;
 }
 
-#table-seller th, #table-seller td{
+#table-seller th, #table-seller td, #table-sales th, #table-sales td{
     padding: 1%;
 }
 
-#table-seller tr td:nth-child(n + 3) {
-    text-align: center; 
+#table-seller tr td:nth-child(n + 3) button{
+    margin: 0 auto;
+    font-size: 22px;
 }
 
-#form-seller{
+#form{
     display: flex;
     flex-direction: column;
 }
@@ -45,4 +45,39 @@
 aside {
     width: 8%;
     background-color: #06DC5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navigation-bar{
+    width: 100%;
+}
+
+#navigation-bar ul{
+    list-style: none;
+    padding: 0;
+}
+
+#navigation-bar ul li{
+    padding: 10px 0;
+}
+
+#navigation-bar ul li a button{
+    width: 100%;
+}
+
+#div_buttons{
+    display: flex;
+    gap: 20px;
+}
+
+#form {
+    width: 35%;
+    gap: 40px;
+}
+
+#form input, #form select{
+    border-radius: 10px;
+    padding: 15px 20px;
 }
