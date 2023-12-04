@@ -16,7 +16,7 @@
                 <option value="{{ $seller->seller_id }}">{{ $seller->name }}</option>
             @endforeach
         </select>
-        <input type="text" id="sale_value" name="sale_value" placeholder="Valor da venda">
+        <input type="number" step="0.01" min="0.01" id="sale_value" name="sale_value" placeholder="Valor da venda">
         <input type="date" id="sale_date" name="sale_date" value="{{ date('Y-m-d') }}" placeholder="Data da venda">
         <button class="btn btn-large btn-rounded btn-green bold" type="submit">Registrar venda</button>
     </form>

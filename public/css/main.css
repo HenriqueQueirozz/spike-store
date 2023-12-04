@@ -17,6 +17,7 @@
 
 #table-seller, #table-sales{
     width: 80%;
+    overflow: scroll;
 }
 
 #table-seller th, #table-sales th{
