@@ -50,7 +50,13 @@ class SellerController extends Controller
     }
 
     public function deletar($seller_id){
-        $seller = Seller::FindOrFail($seller_id);
-        $seller->delete();
+        try {
+            $seller = Seller::FindOrFail($seller_id);
+            $seller->delete();
+            return true;
+        } catch (Throwable $e) {
+            report($e);
+            return false;
+        }
     }
 }

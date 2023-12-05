@@ -19,6 +19,7 @@ main {
 
 a {
     color: white;
+    text-decoration: none;
 }
 
 .btn {
@@ -86,6 +87,11 @@ a {
 .btn-nav {
     font-size: 44px;
     height: 100px;
+    flex-direction: column;
+}
+
+.btn-nav span{
+    font-size: 12px;
 }
 
 .bold {

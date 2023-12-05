@@ -3,56 +3,45 @@
 namespace Tests\Unit;
 
 use App\Http\Controllers\SellerController;
+use App\Models\Seller;
 use Tests\TestCase;
 
 class SellerControllerTest extends TestCase
 {
-    private $controller;
-
-    public function __construct()
+    public function test_inserir(): void
     {
-        $controller = new SellerController;   
-    }
-
-    public function listar(): void
-    {
-        $reponse = $this->controller->listar();
-        $this->assertIsList($reponse);
-    }
-
-    public function consultar(): void
-    {
-        $reponse = $this->controller->consultar();
-        $this->assertIsList($reponse);
-    }
-
-    public function inserir(): void
-    {
+        $controller = new SellerController;
         $data = [
             'name' => 'Nome teste',
-            'email' => 'teste@gmail.com',
+            'email' => 'teste@gmail.com'
         ];
         
-        $reponse = $this->controller->inserir($data);
-        $this->assertTrue($reponse);
+        $response = $controller->inserir($data);
+        $this->assertIsObject($response);
     }
 
-    public function atualizar(): void
+    public function test_atualizar(): void
     {
+        $controller = new SellerController;
+        Seller::create(['seller_id' => 1, 'name' => 'Nome teste', 'email' => 'teste@gmail.com']);
+
         $data = [
             'seller_id' => '1',
             'name' => 'Nome atualizado',
-            'email' => 'testeAtualizado@gmail.com',
+            'email' => 'testeAtualizado@gmail.com'
         ];
         
-        $reponse = $this->controller->atualizar($data);
-        $this->assertTrue($reponse);
+        $response = $controller->atualizar($data);
+        $this->assertIsObject($response);
     }
 
-    public function deletar(): void
+    public function test_deletar(): void
     {
+        $controller = new SellerController;
+        Seller::create(['seller_id' => 1, 'name' => 'Nome teste', 'email' => 'teste@gmail.com']);
+        
         $data = 1;
-        $reponse = $this->controller->deletar($data);
+        $reponse = $controller->deletar($data);
         $this->assertTrue($reponse);
     }
     

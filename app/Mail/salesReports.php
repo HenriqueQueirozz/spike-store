@@ -17,14 +17,16 @@ class salesReports extends Mailable
 
     private $seller;
     private $sales;
+    private $value_total;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(Seller $seller, $sales)
+    public function __construct(Seller $seller, $sales, $value_total)
     {
         $this->seller = $seller;
         $this->sales = $sales;
+        $this->value_total = $value_total;
     }
 
     /**
@@ -33,7 +35,7 @@ class salesReports extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address($this->seller->email, $this->seller->name),
+            from: new Address('spikestore@gmail.com', 'Spike Star'),
             subject: '[Relatório de vendas] - '.date('d/m/Y'),
         );
     }
@@ -46,7 +48,9 @@ class salesReports extends Mailable
         return new Content(
             view: 'mail.salesReports',
             with: [
-                'sales' => $this->sales
+                'seller' => $this->seller,
+                'sales' => $this->sales,
+                'value_total' => $this->value_total
             ],
         );
     }

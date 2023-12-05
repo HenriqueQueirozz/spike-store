@@ -20,7 +20,7 @@ class Sale extends Model
         return $this->belongsTo(Seller::class, 'seller_id', 'seller_fk');
     }
 
-    public function listar_vendas ($seller_id)
+    public function listar_vendas ($seller_id = '')
     {
         if(empty($seller_id)){
             $sales = DB::table('sales')
@@ -39,9 +39,21 @@ class Sale extends Model
         return $sales->toArray();
     }
 
-    public function soma_vendas ()
+    public function listar_vendas_periodo ($data_inicial = '', $data_final = ''){
+        $sales = DB::table('sales')
+                    ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id') 
+                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value')
+                    ->whereBetween('sales.date', [$data_inicial, $data_final])
+                    ->orderBy('sales.sale_id')
+                    ->get();
+        return $sales->toArray();
+    }
+
+    public function soma_vendas_periodo ($data_inicial = '', $data_final = '')
     {
-        $sales = DB::table('sales')->sum('sales.value');
+        $sales = DB::table('sales')
+                    ->whereBetween('sales.date', [$data_inicial, $data_final])
+                    ->sum('sales.value');
         return $sales;
     }
 }

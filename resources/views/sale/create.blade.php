@@ -7,7 +7,7 @@
         <p class="msg">{{ session('msg') }}</p>
     @endif
     <div id="container-header">
-        <h1>Cadastro de vendas</h1>
+        <h1 class="margin-center">Cadastro de vendas</h1>
     </div>
     <form id="form" method="POST" action="/v1/sale/store">
         @csrf

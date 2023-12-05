@@ -33,6 +33,10 @@
     padding: 1%;
 }
 
+#table-seller tr td:nth-child(1){
+    text-decoration: underline;
+}
+
 #table-seller tr td:nth-child(n + 3) button{
     margin: 0 auto;
     font-size: 22px;
@@ -81,4 +85,8 @@ aside {
 #form input, #form select{
     border-radius: 10px;
     padding: 15px 20px;
+}
+
+.margin-center{
+    margin: 0 auto;
 }

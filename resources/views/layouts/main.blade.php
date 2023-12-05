@@ -12,10 +12,10 @@
                 <nav id="navigation-bar">
                     <ul>
                         <li>
-                            <a href="/vendedores"><button class="btn btn-nav btn-darkGreen bold"><ion-icon name="people-outline"></ion-icon></button></a>
+                            <a href="/vendedores"><button class="btn btn-nav btn-darkGreen bold"><ion-icon name="people-outline"></ion-icon><span>Vendedores</span></button></a>
                         </li>
                         <li>
-                            <a href="/vendas"><button class="btn btn-nav btn-darkGreen bold"><ion-icon name="cart-outline"></ion-icon></button></a>
+                            <a href="/vendas"><button class="btn btn-nav btn-darkGreen bold"><ion-icon name="cart-outline"></ion-icon><span>Vendas</span></button></a>
                         </li>
                     </ul>
                 </nav>

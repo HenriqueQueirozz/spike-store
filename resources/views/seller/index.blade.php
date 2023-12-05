@@ -24,7 +24,7 @@
             <tbody>
                 @foreach($sellers as $seller)
                     <tr>
-                        <td><a href="">{{ $seller->name }}</a></td>
+                        <td><a href="/vendas?seller_id={{ $seller->seller_id }}">{{ $seller->name }}</a></td>
                         <td>{{ $seller->email }}</td>
                         <td><a href="/vendedores/edit/{{ $seller->seller_id }}"><button class="btn btn-yellow btn-rounded bold"><ion-icon name="color-wand-outline"></ion-icon></button></a></td>
                         <td><a href="/v1/seller/destroy/{{ $seller->seller_id }}"><button class="btn btn-red btn-rounded bold"><ion-icon name="trash-outline"></ion-icon></button></a></td>

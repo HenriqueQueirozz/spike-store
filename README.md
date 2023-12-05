@@ -1,10 +1,11 @@
 <!-- Banner -->
+<img src="public/img/spike.png" height="150" width="200" alt="Cacto Sorridente" />
 <h1 align="center">Spike Store</h1>
 <p align="center">🛒🌵 Sistema para cadastro e gerenciamento de vendas</p>
 
 <!-- Badges -->
 
-<h4 align="center"> 🚧  Em construção...  🚧</h4>
+<h4 align="center">✅  Finalizado  ✅</h4>
 
 <p align="center">
     <a href="#objetivo">Objetivo</a> •
@@ -17,66 +18,136 @@
 
 <div id="objetivo">
     <h2>Objetivo</h2>
-    <p></p>
+    <p>A "Spike Store" é um projeto criado como parte de um teste técnico de desenvolvimento de software<, o objetivo era o desenvolvimento de uma plataforma para cadastro de vendedores e suas respectivas vendas, o desafio explorou tecnologias como PHP e MySQL, exigindo funcionalidade como um CRUD (Create, Read, Update e Delete) de informações, assim como agendamento de rotinas.</p>
 </div>
 <div id="roadmap">
     <h2>Roadmap</h2>
     <h3>Funcionalidades</h3>
+    <p>Era necessário que o projeto possui as seguintes funcionalidades:</p>
     <ul>
-        <li>Cadastro de vendedores</li>
-        <li>Listagem de vendedores</li>
-        <li>Atualização de vendedores</li>
-        <li>Exclusão de vendedores</li>
-        <li>Cadastro de vendas</li>
-        <li>CListagem de vendas</li>
+        <li>[Create] - Cadastro de vendedores;</li>
+        <li>[Read] - Listagem de vendedores;</li>
+        <li>[Update] - Atualização de vendedores;</li>
+        <li>[Delete] - Exclusão de vendedores;</li>
+        <li>Cadastro de vendas;</li>
+        <li>Listagem de vendas;</li>
+        <li>Calculo de comissão de venda;</li>
+        <li>Rotina de envio de relatórios diários.</li>
     </ul>
     <h3>Banco de Dados (DER)</h3> 
     <p align="center">
-        <img src="public/img/der_spike_store.jpg" height="150" width="175" alt="Diagrama de Entidade e Relacionamento" />
+        <img src="public/img/der_spike_store.jpg" height="150" width="200" alt="Diagrama de Entidade e Relacionamento" />
     </p>
-    <h3>Rotas</h3>
-    <h3>Teste unitários</h3>
 </div>
 <div id="prototipacao">
     <h2>Prototipação</h2>
-    <h3>Wireframe</h3>
-    <h3>Figma</h3>
+    <img src="public/img/Print_1.jpg" height="150" width="200" alt="Captura de tela início" />
+    <img src="public/img/Print_2.jpg" height="150" width="200" alt="Captura de tela vendedores" />
+    <img src="public/img/Print_3/jpg" height="150" width="200" alt="Captura de tela venda" />
+    <img src="public/img/Print_4.jpg" height="150" width="200" alt="Captura de tela cadastrar vendedor" />
 </div>
 <div id="tecnologias">
     <h2>Tecnologias</h2>
     <p>As seguintes ferramentas foram usadas na construção do projeto:</p>
-    - [Laravel](https://expo.io/)
-    - [PHP 8.2](https://nodejs.org/en/)
-    - [Composer](https://pt-br.reactjs.org/)
-    - [Javascript](https://nodejs.org/en/)
-    - [Mysql](https://reactnative.dev/)
+    <ul>
+        <li><a href="https://laravel.com/">[Laravel]</a></li>
+        <li><a href="https://www.php.net/">[PHP 8.2]</a></li>
+        <li><a href="https://getcomposer.org">[Composer]</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">[Javascript]</a></li>
+        <li><a href="https://www.mysql.com/">[Mysql]</a></li>
+    </ul>
 </div>
 <div id="executando_projeto">
     <h2>Executando o projeto</h2>
     <h3>Pré-requisitos</h3>
-    <p>Antes de mais nada, você precisará ter instalado em sua máquina as seguintes ferramentas:</p>
-    [PHP 8.2](https://www.php.net/), [Composer](https://getcomposer.org), [Mysql](https://www.mysql.com/).
+    <p>Antes de mais nada, você precisará ter instalado em sua máquina as seguintes ferramentas:<br>
+    <a href="https://www.php.net/">[PHP 8.2]</a>, <a href="https://getcomposer.org">[Composer]</a>, <a href="https://www.mysql.com/">[Mysql]</a>.</p>
     <h3>Preparando ambiente</h3>
-    <p>Migrations e Arquivos SQL</p>
-    <h3>Rodando a aplicação</h3>
+<p>Crie um arquivo .env com os seguintes moldes:<br>
+(Altere se necessários as configurações de banco e envio de e-mail)</p>
+```bash
+APP_NAME=Spike_Store
+APP_ENV=local
+APP_KEY=base64:FYvJ2tNV0q0GxsqOE7t547Yb1xihITBAKAEIdUSbwe8=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=spike_store
+DB_USERNAME=root
+DB_PASSWORD=
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=mailpit
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_HOST=
+PUSHER_PORT=443
+PUSHER_SCHEME=https
+PUSHER_APP_CLUSTER=mt1
+
+VITE_APP_NAME="${APP_NAME}"
+VITE_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+VITE_PUSHER_HOST="${PUSHER_HOST}"
+VITE_PUSHER_PORT="${PUSHER_PORT}"
+VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
+VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+```
+
+<h3>Rodando a aplicação</h3>
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone <https://github.com/HenriqueQueirozz/spike-store.git>
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd nlw1
-
-# Vá para a pasta server
-$ cd server
+# Acesse a pasta do projeto
+$ cd spike-store
 
 # Instale as dependências
-$ npm install
+$ composer install
 
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
+# Em seu banco de dados crie a seguinte tabela
+create database spike_store;
 
-# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+# Caso não tenha executado as querys descritas no tópico anterior, execute as migrations
+$ php artisan migrate:fresh
+
+# Execute a aplicação
+$ php artisan serve
+
+# O servidor iniciará na porta:8000 - acesse <http://localhost:8000>
 ```
 </div>
-<div id="autor"></div>

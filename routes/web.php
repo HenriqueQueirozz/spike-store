@@ -4,17 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageSaleController;
 use App\Http\Controllers\PageSellerController;
-use App\Mail\salesReports;
-use App\Models\Seller;
-use Illuminate\Support\Facades\Mail;
 
 /* Apresentação */
 Route::get('/', function(){ return view('inicio'); });
-
-/* E-mails */
-/* Route::get('/mail', function(){ 
-    Mail::to('henrique.q.paula@gmail.com')->send(new salesReports());
-}); */
 
 /* Páginas de apresentação */
 Route::get('/vendedores', [PageSellerController::class, 'index']);
