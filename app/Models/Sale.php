@@ -16,44 +16,43 @@ class Sale extends Model
 
     protected $date = ['date'];
 
-    public function seller() {
+    public function seller()
+    {
         return $this->belongsTo(Seller::class, 'seller_id', 'seller_fk');
     }
 
-    public function listar_vendas ($seller_id = '')
+    public function listar_vendas($seller_id = '', $data_inicial = '', $data_final = '')
     {
-        if(empty($seller_id)){
-            $sales = DB::table('sales')
+        $sales = DB::table('sales')
                     ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id') 
-                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value', 'sales.commission')
-                    ->orderBy('sales.sale_id')
-                    ->get();
-        }else{
-            $sales = DB::table('sales')
-                    ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id') 
-                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value', 'sales.commission')
-                    ->where('sellers.seller_id', $seller_id)
-                    ->orderBy('sales.sale_id')
-                    ->get();
+                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value', 'sales.commission');
+
+        if(!empty($seller_id)){
+            $sales = $sales->where('sellers.seller_id', $seller_id);
         }
+
+        if (!empty($data_inicial) && !empty($data_final)) {
+            $sales = $sales->whereBetween('sales.date', [$data_inicial, $data_final]);
+        }
+
+        $sales = $sales->orderBy('sales.sale_id')->get();
         return $sales->toArray();
     }
 
-    public function listar_vendas_periodo ($data_inicial = '', $data_final = ''){
-        $sales = DB::table('sales')
-                    ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id') 
-                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value', 'sales.commission')
-                    ->whereBetween('sales.date', [$data_inicial, $data_final])
-                    ->orderBy('sales.sale_id')
-                    ->get();
-        return $sales->toArray();
-    }
-
-    public function soma_vendas_periodo ($data_inicial = '', $data_final = '')
+    public function soma_vendas_periodo($seller_id = '', $data_inicial = '', $data_final = '')
     {
         $sales = DB::table('sales')
-                    ->whereBetween('sales.date', [$data_inicial, $data_final])
-                    ->sum('sales.value');
+                    ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id');
+
+        if(!empty($seller_id)){
+            $sales = $sales->where('sellers.seller_id', $seller_id);
+        }
+
+        if (!empty($data_inicial) && !empty($data_final)) {
+            $sales = $sales->whereBetween('sales.date', [$data_inicial, $data_final]);
+        }
+
+        $sales = $sales->sum('sales.value');
         return $sales;
     }
 }
