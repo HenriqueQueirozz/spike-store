@@ -20,8 +20,8 @@ class Kernel extends ConsoleKernel
             $modelSale = new Sale;
             $date = date('Y-m-d');
 
-            $sales = $modelSale->listar_vendas('', $date, $date);
-            $value_total = $modelSale->soma_vendas_periodo('', $date, $date);
+            $sales = $modelSale->listSale('', $date, $date);
+            $value_total = $modelSale->sumSale('', $date, $date);
 
             foreach($sellers as $seller){
                 Mail::to($seller)->send(new salesReports($seller, $sales, $value_total));

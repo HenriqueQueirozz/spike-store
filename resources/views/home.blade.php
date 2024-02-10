@@ -46,7 +46,7 @@
         </main>
         <script>
             function redirectSellers(){
-                window.location.href = "/vendedores";
+                window.location.href = "/seller";
             }
         </script>
     </body>

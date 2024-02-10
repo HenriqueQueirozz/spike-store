@@ -13,12 +13,11 @@ class PageSaleController extends SaleController
         if($request['seller_id'] == 0){
             $request['seller_id'] = '';
         }
-        $sales = $this->listar($request['seller_id']);
-        $sellers = Seller::all(); // Aqui eu acabei quebrando um pouco a arquitetura que planejei inicialmente
+        $sales = $this->listSale($request['seller_id']);
+        $sellers = Seller::all();
         return view('sale.index', ['sales' => $sales, 'seller_id' => $request['seller_id'], 'sellers' => $sellers]);
     }
 
-    /* Processamento */
     public function store(StoreSaleRequest $request): RedirectResponse
     {
         $validated = $request->validated();
@@ -29,8 +28,8 @@ class PageSaleController extends SaleController
             'commission' => $validated['sale_value'] * 0.085
         ];
 
-        $response = $this->inserir($sale);
+        $response = $this->insertSale($sale);
 
-        return redirect('/vendas/create')->with('msg', 'Venda registrada com sucesso!');
+        return redirect('/sale/create')->with('msg', 'Venda registrada com sucesso!');
     }
 }

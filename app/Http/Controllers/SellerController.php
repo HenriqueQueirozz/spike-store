@@ -9,17 +9,17 @@ use App\Models\Seller;
 
 class SellerController extends Controller
 {
-    public function listar(){
+    public function listSeller(){
         $sellers = Seller::all();
         return $sellers;
     }
 
-    public function consultar($seller_id){
+    public function selectSeller($seller_id){
         $seller = Seller::FindOrFail($seller_id);
         return $seller;
     }
 
-    public function inserir($seller_data){
+    public function insertSeller($seller_data){
         try {
             $seller = new Seller;
 
@@ -34,7 +34,7 @@ class SellerController extends Controller
         }
     }
 
-    public function atualizar($seller_data){
+    public function updateSeller($seller_data){
         try {
             $seller = Seller::FindOrFail($seller_data['seller_id']);
 
@@ -49,7 +49,7 @@ class SellerController extends Controller
         }
     }
 
-    public function deletar($seller_id){
+    public function deleteSeller($seller_id){
         try {
             $seller = Seller::FindOrFail($seller_id);
             $seller->delete();

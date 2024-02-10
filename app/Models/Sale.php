@@ -21,7 +21,7 @@ class Sale extends Model
         return $this->belongsTo(Seller::class, 'seller_id', 'seller_fk');
     }
 
-    public function listar_vendas($seller_id = '', $data_inicial = '', $data_final = '')
+    public function listSale($seller_id = '', $data_inicial = '', $data_final = '')
     {
         $sales = DB::table('sales')
                     ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id') 
@@ -39,7 +39,7 @@ class Sale extends Model
         return $sales->toArray();
     }
 
-    public function soma_vendas_periodo($seller_id = '', $data_inicial = '', $data_final = '')
+    public function sumSale($seller_id = '', $data_inicial = '', $data_final = '')
     {
         $sales = DB::table('sales')
                     ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id');

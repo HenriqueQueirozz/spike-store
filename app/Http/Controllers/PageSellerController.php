@@ -12,7 +12,7 @@ use App\Models\Seller;
 class PageSellerController extends SellerController
 {
     public function index(){  
-        $sellers = $this->listar();      
+        $sellers = $this->listSeller();      
         return view('seller.index', ['sellers' => $sellers]);
     }
 
@@ -21,12 +21,12 @@ class PageSellerController extends SellerController
     }
 
     public function edit($id){
-        $seller = $this->consultar($id);     
+        $seller = $this->selectSeller($id);     
         return view('seller.edit', ['seller' => $seller]);
     }
 
-    public function create_vendas(){
-        $sellers = $this->listar();  
+    public function createSales(){
+        $sellers = $this->listSeller();  
 
         if(empty($sellers[0])){
             return view('seller.index', ['sellers' => $sellers])->with('msg', 'Antes de criar uma nova venda é necessário cadastrar ao menos um Vendedor');
@@ -44,9 +44,9 @@ class PageSellerController extends SellerController
             'email' => $validated['seller_email']
         ];
 
-        $response = $this->inserir($seller);
+        $response = $this->insertSeller($seller);
 
-        return redirect('/vendedores/create')->with('msg', 'Vendedor criado com sucesso!');
+        return redirect('/seller/create')->with('msg', 'Vendedor criado com sucesso!');
     }
 
     public function update(UpdateSellerRequest $request): RedirectResponse
@@ -59,27 +59,27 @@ class PageSellerController extends SellerController
             'email' => $validated['seller_email']
         ];
 
-        $seller = $this->consultar($update_seller['seller_id']);
+        $seller = $this->selectSeller($update_seller['seller_id']);
         if($seller['email'] != $update_seller['email']){
             $verification_seller = Seller::where('email', $update_seller['email'])->first();
 
             if($verification_seller){
-                return redirect('/vendedores/edit/'.$seller['seller_id']);
+                return redirect('/seller/edit/'.$seller['seller_id']);
             }
         }
         
-        $response = $this->atualizar($update_seller);
+        $response = $this->updateSeller($update_seller);
 
-        return redirect('/vendedores');
+        return redirect('/seller');
     }
 
     public function destroy($seller_id)
     {
         if(empty($seller_id)){
-            return redirect('/vendedores')->with('msg', 'Não foi possível excluir o vendedor!');
+            return redirect('/seller')->with('msg', 'Não foi possível excluir o vendedor!');
         }
         
-        $response = $this->deletar($seller_id);
-        return redirect('/vendedores')->with('msg', 'Vendedor excluído com sucesso!');
+        $response = $this->deleteSeller($seller_id);
+        return redirect('/seller')->with('msg', 'Vendedor excluído com sucesso!');
     }
 }

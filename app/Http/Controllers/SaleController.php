@@ -16,18 +16,17 @@ class SaleController extends Controller
         $this->saleModel = new Sale;
     }
 
-    public function listar($seller_id){
-        //$sellers_sales = Seller::with('sales')->get();
-        $sales = $this->saleModel->listar_vendas($seller_id);
+    public function listSale($seller_id){
+        $sales = $this->saleModel->listSale($seller_id);
         return $sales;
     }
 
-    public function consultar($id){
+    public function selectSale($id){
         $sale = Sale::FindOrFail($id);
         return $sale;
     }
 
-    public function inserir($sale_data){
+    public function insertSale($sale_data){
         try {
             $seller = Seller::find($sale_data['seller_id']);
 
@@ -45,7 +44,7 @@ class SaleController extends Controller
         }
     }
 
-    public function atualizar($sale_data){
+    public function updateSale($sale_data){
         try {
             $sale = Sale::FindOrFail($sale_data['id']);
 
@@ -61,7 +60,7 @@ class SaleController extends Controller
         }
     }
 
-    public function deletar($sale_id){
+    public function deleteSale($sale_id){
         $sale = Sale::FindOrFail($sale_id);
         $sale->delete();
     }

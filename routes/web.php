@@ -6,15 +6,15 @@ use App\Http\Controllers\PageSaleController;
 use App\Http\Controllers\PageSellerController;
 
 /* Apresentação */
-Route::get('/', function(){ return view('inicio'); });
+Route::get('/', function(){ return view('home'); });
 
 /* Páginas de apresentação */
-Route::get('/vendedores', [PageSellerController::class, 'index']);
-Route::get('/vendedores/create', [PageSellerController::class, 'create']);
-Route::get('/vendedores/edit/{id}', [PageSellerController::class, 'edit']);
+Route::get('/seller', [PageSellerController::class, 'index']);
+Route::get('/seller/create', [PageSellerController::class, 'create']);
+Route::get('/seller/edit/{id}', [PageSellerController::class, 'edit']);
 
-Route::get('/vendas{seller_id?}', [PageSaleController::class, 'index']);
-Route::get('/vendas/create', [PageSellerController::class, 'create_vendas']);
+Route::get('/sale{seller_id?}', [PageSaleController::class, 'index']);
+Route::get('/sale/create', [PageSellerController::class, 'createSales']);
 
 /* Processamento */
 Route::post('/v1/seller/store', [PageSellerController::class, 'store']);
