@@ -1,5 +1,7 @@
 <!-- Banner -->
-<img src="public/img/spike.png" height="150" width="200" alt="Cacto Sorridente" />
+<p align="center">
+    <img src="public/img/spike.png" height="200" width="200" alt="Cacto Sorridente" />
+</p>
 <h1 align="center">Spike Store</h1>
 <p align="center">🛒🌵 Sistema para cadastro e gerenciamento de vendas</p>
 
@@ -12,8 +14,7 @@
     <a href="#roadmap">Roadmap</a> •
     <a href="#prototipacao">Prototipação</a> •
     <a href="#tecnologias">Tecnologias</a> •
-    <a href="#executando_projeto">Executando projeto</a> •
-    <a href="#autor">Autor</a>
+    <a href="#executando_projeto">Executando projeto</a>
 </p>
 
 <div id="objetivo">
@@ -36,15 +37,17 @@
     </ul>
     <h3>Banco de Dados (DER)</h3> 
     <p align="center">
-        <img src="public/img/der_spike_store.jpg" height="150" width="200" alt="Diagrama de Entidade e Relacionamento" />
+        <img src="public/img/der_spike_store.jpg" alt="Diagrama de Entidade e Relacionamento" />
     </p>
 </div>
 <div id="prototipacao">
     <h2>Prototipação</h2>
-    <img src="public/img/Print_1.jpg" height="150" width="200" alt="Captura de tela início" />
-    <img src="public/img/Print_2.jpg" height="150" width="200" alt="Captura de tela vendedores" />
-    <img src="public/img/Print_3/jpg" height="150" width="200" alt="Captura de tela venda" />
-    <img src="public/img/Print_4.jpg" height="150" width="200" alt="Captura de tela cadastrar vendedor" />
+     <p align="center">
+        <img src="public/img/Print_1.png" alt="Captura de tela início" /><br>
+        <img src="public/img/Print_2.png" alt="Captura de tela vendedores" /><br>
+        <img src="public/img/Print_3.png" alt="Captura de tela venda" /><br>
+        <img src="public/img/Print_4.png" alt="Captura de tela cadastrar vendedor" />
+     </p>
 </div>
 <div id="tecnologias">
     <h2>Tecnologias</h2>
@@ -65,6 +68,7 @@
     <h3>Preparando ambiente</h3>
 <p>Crie um arquivo .env com os seguintes moldes:<br>
 (Altere se necessários as configurações de banco e envio de e-mail)</p>
+    
 ```bash
 APP_NAME=Spike_Store
 APP_ENV=local
