@@ -12,7 +12,7 @@ class Sale extends Model
 
     protected $primaryKey = 'sale_id';
 
-    protected $fillable = ['seller_fk', 'value', 'date'];
+    protected $fillable = ['seller_fk', 'value', 'commission', 'date'];
 
     protected $date = ['date'];
 
@@ -25,13 +25,13 @@ class Sale extends Model
         if(empty($seller_id)){
             $sales = DB::table('sales')
                     ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id') 
-                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value')
+                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value', 'sales.commission')
                     ->orderBy('sales.sale_id')
                     ->get();
         }else{
             $sales = DB::table('sales')
                     ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id') 
-                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value')
+                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value', 'sales.commission')
                     ->where('sellers.seller_id', $seller_id)
                     ->orderBy('sales.sale_id')
                     ->get();
@@ -42,7 +42,7 @@ class Sale extends Model
     public function listar_vendas_periodo ($data_inicial = '', $data_final = ''){
         $sales = DB::table('sales')
                     ->join('sellers', 'sales.seller_fk', '=', 'sellers.seller_id') 
-                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value')
+                    ->select('sellers.name', 'sellers.email', 'sales.sale_id', 'sales.date', 'sales.value', 'sales.commission')
                     ->whereBetween('sales.date', [$data_inicial, $data_final])
                     ->orderBy('sales.sale_id')
                     ->get();

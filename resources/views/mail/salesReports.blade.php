@@ -86,7 +86,7 @@
                         <tr>
                             <td class="text-left">{{ $sale->sale_id }}</td>
                             <td class="text-left">{{ $sale->name }}</td>
-                            <td class="text-right">{{ number_format($sale->value * 0.085, 2, ',', '.') }}</td>
+                            <td class="text-right">{{ number_format($sale->commission, 2, ',', '.') }}</td>
                             <td class="text-right">{{ number_format($sale->value, 2, ',', '.') }}</td>
                             <td class="text-left">{{ date_format(date_create($sale->date), "d/m/Y") }}</td>
                         </tr>

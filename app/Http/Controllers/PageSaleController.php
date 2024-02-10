@@ -25,7 +25,8 @@ class PageSaleController extends SaleController
         $sale = [
             'seller_id' => $validated['seller_id'],
             'date' => $validated['sale_date'],
-            'value' => $validated['sale_value']
+            'value' => $validated['sale_value'],
+            'commission' => $validated['sale_value'] * 0.085
         ];
 
         $response = $this->inserir($sale);

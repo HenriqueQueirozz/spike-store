@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('sale_id');
             $table->foreignId('seller_fk')->constrained('sellers', 'seller_id', 'seller_fk')->onUpdate('cascade')->onDelete('cascade');
             $table->decimal('value', $precision = 8, $scale = 2);
+            $table->decimal('commission', $precision = 8, $scale = 2);
             $table->date('date');
             $table->timestamps();
         });

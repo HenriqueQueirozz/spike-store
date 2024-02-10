@@ -33,6 +33,7 @@ class SaleController extends Controller
 
             $data = [
                 'value' => $sale_data['value'],
+                'commission' => $sale_data['commission'],
                 'date' => $sale_data['date']
             ];
         
